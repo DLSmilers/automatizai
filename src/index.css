@@ -8,58 +8,60 @@ All colors MUST be HSL.
 
 @layer base {
   :root {
-    /* FinTech Premium Palette */
-    --background: 214 32% 96%; /* Branco gelo #F1F5F9 */
-    --foreground: 221 47% 11%; /* Preto suave #0F172A */
+    /* Tech Moderno Palette */
+    --background: 218 32% 98%; /* Claro #F8FAFC */
+    --foreground: 225 21% 14%; /* Escuro #1A1D29 */
 
     --card: 0 0% 100%;
-    --card-foreground: 221 47% 11%;
+    --card-foreground: 225 21% 14%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 221 47% 11%;
+    --popover-foreground: 225 21% 14%;
 
-    --primary: 217 87% 53%; /* Azul royal #2563EB */
+    --primary: 214 100% 40%; /* Azul confiança #0066CC */
     --primary-foreground: 0 0% 100%;
 
-    --secondary: 159 84% 39%; /* Verde esmeralda #10B981 */
+    --secondary: 169 100% 42%; /* Verde sucesso #00D4AA */
     --secondary-foreground: 0 0% 100%;
 
-    --muted: 214 32% 91%;
-    --muted-foreground: 215 20% 35%; /* Cinza médio #475569 */
+    --muted: 218 27% 94%;
+    --muted-foreground: 215 25% 27%; /* Cinza escuro #334155 */
 
-    --accent: 260 91% 66%; /* Roxo tecnológico #8B5CF6 */
+    --accent: 17 100% 60%; /* Laranja energia #FF6B35 */
     --accent-foreground: 0 0% 100%;
 
     --destructive: 0 84% 60%;
     --destructive-foreground: 0 0% 100%;
 
-    --border: 214 32% 91%;
-    --input: 214 32% 91%;
-    --ring: 217 87% 53%;
+    --border: 218 27% 91%;
+    --input: 218 27% 91%;
+    --ring: 214 100% 40%;
 
-    /* Custom Design Tokens - FinTech Premium */
-    --primary-glow: 217 87% 63%;
-    --secondary-glow: 159 84% 49%;
-    --accent-glow: 260 91% 76%;
+    /* Custom Design Tokens - Tech Moderno */
+    --primary-glow: 214 100% 50%;
+    --secondary-glow: 169 100% 52%;
+    --accent-glow: 17 100% 70%;
     
-    /* Premium Gradients */
-    --gradient-primary: linear-gradient(135deg, hsl(217 87% 53%), hsl(217 87% 63%));
-    --gradient-secondary: linear-gradient(135deg, hsl(159 84% 39%), hsl(159 84% 49%));
-    --gradient-accent: linear-gradient(135deg, hsl(260 91% 66%), hsl(260 91% 76%));
-    --gradient-hero: linear-gradient(135deg, hsl(217 87% 53%) 0%, hsl(159 84% 39%) 50%, hsl(260 91% 66%) 100%);
-    --gradient-fintech: linear-gradient(135deg, hsl(217 87% 53%) 0%, hsl(260 91% 66%) 100%);
-    --gradient-glass: linear-gradient(135deg, hsla(217 87% 53% / 0.1), hsla(159 84% 39% / 0.1));
+    /* Tech Moderno Gradients */
+    --gradient-primary: linear-gradient(135deg, hsl(214 100% 40%), hsl(214 100% 50%));
+    --gradient-secondary: linear-gradient(135deg, hsl(169 100% 42%), hsl(169 100% 52%));
+    --gradient-accent: linear-gradient(135deg, hsl(17 100% 60%), hsl(17 100% 70%));
+    --gradient-hero: linear-gradient(135deg, hsl(214 100% 40%) 0%, hsl(169 100% 42%) 50%, hsl(17 100% 60%) 100%);
+    --gradient-tech: linear-gradient(135deg, hsl(214 100% 40%) 0%, hsl(17 100% 60%) 100%);
+    --gradient-success: linear-gradient(135deg, hsl(169 100% 42%) 0%, hsl(214 100% 40%) 100%);
+    --gradient-glass: linear-gradient(135deg, hsla(214 100% 40% / 0.1), hsla(169 100% 42% / 0.1));
     
-    /* Premium Shadows */
-    --shadow-soft: 0 2px 10px hsla(217 87% 53% / 0.1);
-    --shadow-medium: 0 8px 30px hsla(217 87% 53% / 0.15);
-    --shadow-strong: 0 20px 40px hsla(217 87% 53% / 0.2);
-    --shadow-glow: 0 0 30px hsla(217 87% 53% / 0.3);
-    --shadow-fintech: 0 10px 40px hsla(260 91% 66% / 0.2);
+    /* Tech Moderno Shadows */
+    --shadow-soft: 0 2px 10px hsla(214 100% 40% / 0.1);
+    --shadow-medium: 0 8px 30px hsla(214 100% 40% / 0.15);
+    --shadow-strong: 0 20px 40px hsla(214 100% 40% / 0.2);
+    --shadow-glow: 0 0 30px hsla(214 100% 40% / 0.3);
+    --shadow-tech: 0 10px 40px hsla(17 100% 60% / 0.2);
+    --shadow-success: 0 10px 40px hsla(169 100% 42% / 0.2);
     
     /* Glass Effects */
     --glass-bg: hsla(0 0% 100% / 0.15);
-    --glass-border: hsla(217 87% 53% / 0.2);
+    --glass-border: hsla(214 100% 40% / 0.2);
     
     /* Animation */
     --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
@@ -85,44 +87,44 @@ All colors MUST be HSL.
   }
 
   .dark {
-    /* Dark mode FinTech Premium */
-    --background: 221 47% 11%; /* Preto suave #0F172A */
-    --foreground: 214 32% 96%; /* Branco gelo */
+    /* Dark mode Tech Moderno */
+    --background: 225 21% 14%; /* Escuro #1A1D29 */
+    --foreground: 218 32% 98%; /* Claro */
 
-    --card: 221 39% 15%;
-    --card-foreground: 214 32% 96%;
+    --card: 225 19% 18%;
+    --card-foreground: 218 32% 98%;
 
-    --popover: 221 39% 15%;
-    --popover-foreground: 214 32% 96%;
+    --popover: 225 19% 18%;
+    --popover-foreground: 218 32% 98%;
 
-    --primary: 217 87% 53%; /* Azul royal mantido */
+    --primary: 214 100% 50%; /* Azul confiança mais claro no dark */
     --primary-foreground: 0 0% 100%;
 
-    --secondary: 159 84% 39%; /* Verde esmeralda mantido */
+    --secondary: 169 100% 52%; /* Verde sucesso mais claro no dark */
     --secondary-foreground: 0 0% 100%;
 
-    --muted: 221 39% 18%;
-    --muted-foreground: 215 20% 65%;
+    --muted: 225 19% 21%;
+    --muted-foreground: 215 25% 65%;
 
-    --accent: 260 91% 66%; /* Roxo tecnológico mantido */
+    --accent: 17 100% 65%; /* Laranja energia mais claro no dark */
     --accent-foreground: 0 0% 100%;
 
     --destructive: 0 62% 50%;
     --destructive-foreground: 0 0% 100%;
 
-    --border: 221 39% 18%;
-    --input: 221 39% 18%;
-    --ring: 217 87% 53%;
+    --border: 225 19% 21%;
+    --input: 225 19% 21%;
+    --ring: 214 100% 50%;
     
     /* Sidebar dark mode */
-    --sidebar-background: 221 47% 11%;
-    --sidebar-foreground: 214 32% 96%;
-    --sidebar-primary: 217 87% 53%;
+    --sidebar-background: 225 21% 14%;
+    --sidebar-foreground: 218 32% 98%;
+    --sidebar-primary: 214 100% 50%;
     --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 221 39% 18%;
-    --sidebar-accent-foreground: 214 32% 96%;
-    --sidebar-border: 221 39% 18%;
-    --sidebar-ring: 217 87% 53%;
+    --sidebar-accent: 225 19% 21%;
+    --sidebar-accent-foreground: 218 32% 98%;
+    --sidebar-border: 225 19% 21%;
+    --sidebar-ring: 214 100% 50%;
   }
 }
 
@@ -141,7 +143,7 @@ All colors MUST be HSL.
 }
 
 @layer components {
-  /* FinTech Premium Components */
+  /* Tech Moderno Components */
   .hero-text {
     @apply bg-gradient-to-r from-primary via-accent to-secondary bg-clip-text text-transparent;
   }
@@ -156,8 +158,12 @@ All colors MUST be HSL.
     box-shadow: var(--shadow-glow);
   }
   
-  .glow-fintech {
-    box-shadow: var(--shadow-fintech);
+  .glow-tech {
+    box-shadow: var(--shadow-tech);
+  }
+  
+  .glow-success {
+    box-shadow: var(--shadow-success);
   }
   
   .hover-lift {
@@ -187,8 +193,15 @@ All colors MUST be HSL.
     -webkit-text-fill-color: transparent;
   }
   
-  .text-gradient-fintech {
-    background: var(--gradient-fintech);
+  .text-gradient-tech {
+    background: var(--gradient-tech);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  
+  .text-gradient-success {
+    background: var(--gradient-success);
     -webkit-background-clip: text;
     background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -210,7 +223,11 @@ All colors MUST be HSL.
     background: var(--gradient-hero);
   }
   
-  .bg-gradient-fintech {
-    background: var(--gradient-fintech);
+  .bg-gradient-tech {
+    background: var(--gradient-tech);
+  }
+  
+  .bg-gradient-success {
+    background: var(--gradient-success);
   }
 }
