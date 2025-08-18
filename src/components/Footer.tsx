@@ -30,7 +30,7 @@ const Footer = () => {
           {/* Company Info */}
           <div className="space-y-4">
             <div className="flex items-center space-x-2">
-              <div className="w-10 h-10 bg-gradient-hero rounded-lg flex items-center justify-center">
+              <div className="w-10 h-10 bg-primary rounded-lg flex items-center justify-center">
                 <MessageCircle className="w-6 h-6 text-white" />
               </div>
               <div>
@@ -97,7 +97,7 @@ const Footer = () => {
             <div className="space-y-2">
               <button
                 onClick={() => window.open("https://wa.me/5511999999999", '_blank')}
-                className="w-full bg-gradient-secondary text-white px-4 py-2 rounded-lg text-sm hover:opacity-90 transition-opacity flex items-center justify-center space-x-2"
+                className="w-full bg-secondary text-white px-4 py-2 rounded-lg text-sm hover:bg-secondary/90 transition-colors flex items-center justify-center space-x-2"
               >
                 <MessageCircle className="w-4 h-4" />
                 <span>WhatsApp</span>

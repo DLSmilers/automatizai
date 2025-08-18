@@ -48,7 +48,7 @@ const HowItWorks = () => {
             <div key={index} className="relative animate-slide-up" style={{ animationDelay: `${index * 0.2}s` }}>
               <Card className="h-full hover-lift transition-all duration-300 hover:border-primary/30">
                 <CardContent className="p-8 text-center">
-                  <div className={`w-16 h-16 bg-gradient-${step.color} rounded-full flex items-center justify-center mx-auto mb-6 glow-effect`}>
+                  <div className={`w-16 h-16 bg-${step.color} rounded-full flex items-center justify-center mx-auto mb-6 glow-effect`}>
                     <step.icon className="w-8 h-8 text-white" />
                   </div>
                   <h3 className="text-xl font-bold mb-4">{step.title}</h3>
@@ -78,7 +78,7 @@ const HowItWorks = () => {
           </div>
 
           <Card className="glass-card overflow-hidden">
-            <div className="bg-gradient-to-r from-primary to-secondary p-4">
+            <div className="bg-primary p-4">
               <div className="flex items-center space-x-3">
                 <div className="w-10 h-10 bg-white/20 rounded-full flex items-center justify-center">
                   <MessageCircle className="w-6 h-6 text-white" />
@@ -96,7 +96,7 @@ const HowItWorks = () => {
                   <div
                     className={`max-w-xs lg:max-w-md px-4 py-2 rounded-lg ${
                       message.user
-                        ? 'bg-gradient-primary text-white ml-4'
+                        ? 'bg-primary text-white ml-4'
                         : 'bg-muted text-foreground mr-4'
                     }`}
                   >

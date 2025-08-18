@@ -158,7 +158,7 @@ const Contact = () => {
                     />
                   </div>
 
-                  <Button type="submit" className="w-full bg-gradient-hero hover:opacity-90 transition-opacity">
+                  <Button type="submit" className="w-full bg-primary hover:bg-primary/90 transition-colors">
                     <Send className="w-4 h-4 mr-2" />
                     Enviar Mensagem
                   </Button>
@@ -175,7 +175,7 @@ const Contact = () => {
                 <Card key={index} className="hover-lift transition-all duration-300 hover:border-primary/30">
                   <CardContent className="p-6">
                     <div className="flex items-center space-x-4">
-                      <div className="w-12 h-12 bg-gradient-primary rounded-lg flex items-center justify-center flex-shrink-0">
+                      <div className="w-12 h-12 bg-primary rounded-lg flex items-center justify-center flex-shrink-0">
                         <contact.icon className="w-6 h-6 text-white" />
                       </div>
                       <div className="flex-1">
@@ -199,7 +199,7 @@ const Contact = () => {
               <Card className="glass-card">
                 <CardContent className="p-6">
                   <div className="flex items-center space-x-4">
-                    <div className="w-12 h-12 bg-gradient-secondary rounded-lg flex items-center justify-center">
+                    <div className="w-12 h-12 bg-secondary rounded-lg flex items-center justify-center">
                       <Clock className="w-6 h-6 text-white" />
                     </div>
                     <div>
@@ -246,7 +246,7 @@ const Contact = () => {
             </p>
             <Button 
               size="lg" 
-              className="bg-gradient-secondary hover:opacity-90 transition-opacity"
+              className="bg-secondary hover:bg-secondary/90 transition-colors"
               onClick={() => window.open("https://wa.me/5511999999999?text=Olá! Gostaria de saber mais sobre os chatbots da AutomatizaÍ", '_blank')}
             >
               <MessageCircle className="w-5 h-5 mr-2" />

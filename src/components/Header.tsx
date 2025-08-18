@@ -17,7 +17,7 @@ const Header = () => {
         <div className="flex items-center justify-between">
           {/* Logo */}
           <div className="flex items-center space-x-2">
-            <div className="w-10 h-10 bg-gradient-hero rounded-lg flex items-center justify-center">
+            <div className="w-10 h-10 bg-primary rounded-lg flex items-center justify-center">
               <MessageCircle className="w-6 h-6 text-white" />
             </div>
             <div>
@@ -64,7 +64,7 @@ const Header = () => {
           <div className="hidden md:block">
             <Button 
               onClick={() => scrollToSection('produtos')}
-              className="bg-gradient-hero hover:opacity-90 transition-opacity"
+              className="bg-primary hover:bg-primary/90 transition-colors"
             >
               Experimente o Cofrin
             </Button>
@@ -115,7 +115,7 @@ const Header = () => {
               </button>
               <Button 
                 onClick={() => scrollToSection('produtos')}
-                className="w-full bg-gradient-hero hover:opacity-90 transition-opacity"
+                className="w-full bg-primary hover:bg-primary/90 transition-colors"
               >
                 Experimente o Cofrin
               </Button>

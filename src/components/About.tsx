@@ -53,7 +53,7 @@ const About = () => {
                     alt="Daniel Miranda Nascimento - Fundador da AutomatizaÍ"
                     className="w-full max-w-sm mx-auto rounded-2xl shadow-xl"
                   />
-                  <div className="absolute -bottom-4 -right-4 w-20 h-20 bg-gradient-primary rounded-full animate-float glow-effect opacity-30" />
+                  <div className="absolute -bottom-4 -right-4 w-20 h-20 bg-primary rounded-full animate-float glow-effect opacity-30" />
                 </div>
               </div>
 
@@ -99,7 +99,7 @@ const About = () => {
           {stats.map((stat, index) => (
             <Card key={index} className="text-center hover-lift">
               <CardContent className="p-6">
-                <div className="w-12 h-12 bg-gradient-primary rounded-lg flex items-center justify-center mx-auto mb-4">
+                <div className="w-12 h-12 bg-primary rounded-lg flex items-center justify-center mx-auto mb-4">
                   <stat.icon className="w-6 h-6 text-white" />
                 </div>
                 <p className="text-2xl md:text-3xl font-bold text-primary mb-1">{stat.value}</p>

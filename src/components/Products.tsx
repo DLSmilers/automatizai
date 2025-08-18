@@ -56,7 +56,7 @@ const Products = () => {
               {/* Left - Product Info */}
               <CardContent className="p-8 lg:p-12">
                 <div className="flex items-center gap-3 mb-4">
-                  <div className="w-12 h-12 bg-gradient-primary rounded-lg flex items-center justify-center">
+                  <div className="w-12 h-12 bg-primary rounded-lg flex items-center justify-center">
                     <DollarSign className="w-6 h-6 text-white" />
                   </div>
                   <div>
@@ -80,7 +80,7 @@ const Products = () => {
                 </div>
 
                 <div className="flex flex-col sm:flex-row gap-4">
-                  <Button className="bg-gradient-primary hover:opacity-90 transition-opacity">
+                  <Button className="bg-primary hover:bg-primary/90 transition-colors">
                     <Smartphone className="w-4 h-4 mr-2" />
                     Experimentar Grátis
                   </Button>
@@ -156,7 +156,7 @@ const Products = () => {
             <p className="text-muted-foreground mb-6">
               Entre em contato e descubra como nossos chatbots podem transformar sua comunicação
             </p>
-            <Button size="lg" className="bg-gradient-hero hover:opacity-90 transition-opacity">
+            <Button size="lg" className="bg-primary hover:bg-primary/90 transition-colors">
               Falar com Especialista
               <MessageCircle className="w-5 h-5 ml-2" />
             </Button>

@@ -66,7 +66,7 @@ const Hero = () => {
             <div className="flex flex-col sm:flex-row gap-4">
               <Button 
                 size="lg" 
-                className="bg-gradient-hero hover:opacity-90 transition-opacity text-lg px-8"
+                className="bg-primary hover:bg-primary/90 transition-colors text-lg px-8"
                 onClick={() => scrollToSection('produtos')}
               >
                 Conhecer o Cofrin
@@ -114,8 +114,8 @@ const Hero = () => {
             </div>
             
             {/* Floating Elements */}
-            <div className="absolute -top-4 -right-4 w-20 h-20 bg-gradient-primary rounded-full animate-float glow-effect opacity-20" />
-            <div className="absolute -bottom-4 -left-4 w-16 h-16 bg-gradient-secondary rounded-full animate-float glow-effect opacity-20" style={{ animationDelay: '1s' }} />
+            <div className="absolute -top-4 -right-4 w-20 h-20 bg-primary rounded-full animate-float glow-effect opacity-20" />
+            <div className="absolute -bottom-4 -left-4 w-16 h-16 bg-secondary rounded-full animate-float glow-effect opacity-20" style={{ animationDelay: '1s' }} />
           </div>
         </div>
       </div>
