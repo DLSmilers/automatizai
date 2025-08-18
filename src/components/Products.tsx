@@ -44,9 +44,11 @@ const Products = () => {
               {/* Left - Product Info */}
               <CardContent className="p-8 lg:p-12">
                 <div className="flex items-center gap-3 mb-4">
-                  <div className="w-12 h-12 bg-primary rounded-lg flex items-center justify-center">
-                    <DollarSign className="w-6 h-6 text-white" />
-                  </div>
+                  <img 
+                    src="/lovable-uploads/1c5af128-d18e-4597-a669-89785cf192c7.png" 
+                    alt="Logo do Cofrin"
+                    className="w-12 h-12 object-contain"
+                  />
                   <div>
                     <CardTitle className="text-2xl md:text-3xl mb-2">Cofrin</CardTitle>
                     <Badge className="bg-secondary text-secondary-foreground">Disponível Agora</Badge>
@@ -80,8 +82,12 @@ const Products = () => {
                     className="hover-lift"
                     onClick={() => window.open('https://automatizai-dashboard.lovable.app/dashboard/HgiMhIjFWOJY67Ch2XqLV7SqXpWnAeAv', '_blank')}
                   >
-                    <BarChart3 className="w-4 h-4 mr-2" />
-                    Ver Dashboard Demo
+                    <img 
+                      src="/lovable-uploads/1c5af128-d18e-4597-a669-89785cf192c7.png" 
+                      alt="Logo do Cofrin"
+                      className="w-4 h-4 mr-2 object-contain"
+                    />
+                    Veja Cofrin em Ação
                   </Button>
                 </div>
               </CardContent>
