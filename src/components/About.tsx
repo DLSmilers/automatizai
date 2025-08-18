@@ -47,8 +47,8 @@ const About = () => {
                   <h3 className="text-2xl md:text-3xl font-bold mb-2">Daniel Miranda Nascimento</h3>
                   <Badge className="bg-primary text-primary-foreground mb-4">Fundador & Desenvolvedor Principal</Badge>
                   <p className="text-muted-foreground text-lg leading-relaxed">
-                    Desenvolvedor web desde 2018 e especialista em desenvolvimento de chatbots e automação conversacional. 
-                    Formado em Tecnologia da Informação, é co-fundador da empresa chamada hod-s e fundou a AutomatizaÍ com a 
+                    Desenvolvedor web desde 2018 e especialista em desenvolvimento web, desenvolvimento de chatbots e automação conversacional. 
+                    É co-fundador da empresa chamada hod-s e fundou a AutomatizaÍ com a 
                     missão de democratizar o acesso à automação inteligente.
                   </p>
                 </div>
