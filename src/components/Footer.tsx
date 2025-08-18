@@ -7,15 +7,14 @@ const Footer = () => {
     { name: "Início", href: "#inicio" },
     { name: "Produtos", href: "#produtos" },
     { name: "Como Funciona", href: "#como-funciona" },
-    { name: "Sobre", href: "#sobre" },
-    { name: "Contato", href: "#contato" }
+    { name: "Sobre", href: "#sobre" }
   ];
 
   const services = [
     { name: "Cofrin - Chatbot Financeiro", href: "#produtos" },
-    { name: "Desenvolvimento Personalizado", href: "#contato" },
-    { name: "Consultoria em Automação", href: "#contato" },
-    { name: "Integração WhatsApp Business", href: "#contato" }
+    { name: "EduBot - Assistente Educacional", href: "#produtos" },
+    { name: "Desenvolvimento Personalizado", href: "#sobre" },
+    { name: "Integração WhatsApp Business", href: "#sobre" }
   ];
 
   const scrollToSection = (sectionId: string) => {
@@ -88,25 +87,19 @@ const Footer = () => {
             </ul>
           </div>
 
-          {/* Contact CTA */}
+          {/* App Info */}
           <div className="space-y-4">
-            <h3 className="text-lg font-semibold">Fale Conosco</h3>
+            <h3 className="text-lg font-semibold">Sobre a Plataforma</h3>
             <p className="text-sm text-muted-foreground">
-              Pronto para automatizar seu negócio? Entre em contato!
+              Chatbots inteligentes para automatizar suas conversas e processos.
             </p>
             <div className="space-y-2">
               <button
-                onClick={() => window.open("https://wa.me/5511999999999", '_blank')}
+                onClick={() => window.open("https://wa.me/557182998471", '_blank')}
                 className="w-full bg-secondary text-white px-4 py-2 rounded-lg text-sm hover:bg-secondary/90 transition-colors flex items-center justify-center space-x-2"
               >
                 <MessageCircle className="w-4 h-4" />
-                <span>WhatsApp</span>
-              </button>
-              <button
-                onClick={() => scrollToSection("#contato")}
-                className="w-full border border-border text-foreground px-4 py-2 rounded-lg text-sm hover:bg-muted transition-colors"
-              >
-                Formulário de Contato
+                <span>Suporte WhatsApp</span>
               </button>
             </div>
           </div>
