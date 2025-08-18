@@ -1,4 +1,4 @@
-import { MessageCircle, Mail, Phone, Code, Heart } from "lucide-react";
+import { MessageCircle, Code, Heart } from "lucide-react";
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
@@ -41,16 +41,6 @@ const Footer = () => {
               Especialistas em desenvolvimento de chatbots para WhatsApp. 
               Transformamos conversas em resultados.
             </p>
-            <div className="space-y-2">
-              <div className="flex items-center space-x-2 text-sm text-muted-foreground">
-                <Phone className="w-4 h-4" />
-                <span>+55 (11) 99999-9999</span>
-              </div>
-              <div className="flex items-center space-x-2 text-sm text-muted-foreground">
-                <Mail className="w-4 h-4" />
-                <span>daniel@automatizai.com.br</span>
-              </div>
-            </div>
           </div>
 
           {/* Quick Links */}
@@ -95,7 +85,7 @@ const Footer = () => {
             </p>
             <div className="space-y-2">
               <button
-                onClick={() => window.open("https://wa.me/557182998471", '_blank')}
+                onClick={() => window.open("https://wa.me/5571981171533", '_blank')}
                 className="w-full bg-secondary text-white px-4 py-2 rounded-lg text-sm hover:bg-secondary/90 transition-colors flex items-center justify-center space-x-2"
               >
                 <MessageCircle className="w-4 h-4" />
