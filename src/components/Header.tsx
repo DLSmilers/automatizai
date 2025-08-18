@@ -18,7 +18,7 @@ const Header = () => {
           {/* Logo */}
           <div className="flex items-center space-x-3">
             <img 
-              src="/lovable-uploads/8831d64d-2a66-4be4-ada4-82dc5ca8ce68.png" 
+              src="/lovable-uploads/d2926e5b-dd78-400f-b05e-3f126e97285f.png" 
               alt="AutomatizaÍ Logo"
               className="w-10 h-10 object-contain"
             />
