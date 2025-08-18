@@ -5,10 +5,9 @@ import danielProfile from "@/assets/daniel-profile.jpg";
 
 const About = () => {
   const stats = [
-    { label: "Anos de Experiência", value: "5+", icon: Award },
-    { label: "Projetos Desenvolvidos", value: "50+", icon: Code },
-    { label: "Clientes Satisfeitos", value: "100+", icon: Users },
-    { label: "Automações Criadas", value: "200+", icon: Zap }
+    { label: "Anos de Experiência", value: "6+", icon: Award },
+    { label: "Projetos Desenvolvidos", value: "10+", icon: Code },
+    { label: "Clientes Satisfeitos", value: "50+", icon: Users }
   ];
 
   const values = [
@@ -63,8 +62,8 @@ const About = () => {
                   <h3 className="text-2xl md:text-3xl font-bold mb-2">Daniel Miranda Nascimento</h3>
                   <Badge className="bg-primary text-primary-foreground mb-4">Fundador & Desenvolvedor Principal</Badge>
                   <p className="text-muted-foreground text-lg leading-relaxed">
-                    Especialista em desenvolvimento de chatbots e automação conversacional, Daniel possui mais de 5 anos de experiência 
-                    criando soluções inovadoras para WhatsApp. Formado em Tecnologia da Informação, ele fundou a AutomatizaÍ com a 
+                    Desenvolvedor web desde 2018 e especialista em desenvolvimento de chatbots e automação conversacional. 
+                    Formado em Tecnologia da Informação, é co-fundador da empresa chamada hod-s e fundou a AutomatizaÍ com a 
                     missão de democratizar o acesso à automação inteligente.
                   </p>
                 </div>
@@ -76,7 +75,7 @@ const About = () => {
                       <Badge variant="outline">WhatsApp Business API</Badge>
                       <Badge variant="outline">Processamento de Linguagem Natural</Badge>
                       <Badge variant="outline">Inteligência Artificial</Badge>
-                      <Badge variant="outline">Node.js & React</Badge>
+                      <Badge variant="outline">PHP</Badge>
                       <Badge variant="outline">Banco de Dados</Badge>
                     </div>
                   </div>
@@ -85,7 +84,7 @@ const About = () => {
                     <h4 className="font-semibold text-primary mb-2">Visão:</h4>
                     <p className="text-muted-foreground">
                       "Acredito que a automação deve ser acessível e intuitiva. Cada chatbot que desenvolvo tem o objetivo 
-                      de simplificar a vida das pessoas e potencializar os resultados dos negócios."
+                      de simplificar a vida das pessoas."
                     </p>
                   </div>
                 </div>
@@ -95,7 +94,7 @@ const About = () => {
         </div>
 
         {/* Stats */}
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mb-20 animate-slide-up">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-20 animate-slide-up">
           {stats.map((stat, index) => (
             <Card key={index} className="text-center hover-lift">
               <CardContent className="p-6">
@@ -135,19 +134,6 @@ const About = () => {
           </div>
         </div>
 
-        {/* Mission Statement */}
-        <div className="text-center mt-20 animate-fade-in">
-          <div className="glass-card p-8 rounded-2xl max-w-4xl mx-auto">
-            <h3 className="text-2xl md:text-3xl font-bold mb-6">
-              Nossa <span className="text-gradient">Missão</span>
-            </h3>
-            <p className="text-lg text-muted-foreground leading-relaxed">
-              Automatizar e otimizar a comunicação empresarial através de soluções inteligentes de chatbot, 
-              tornando a tecnologia de IA conversacional acessível a todos os tipos de negócio. Acreditamos 
-              que cada conversa pode ser transformada em uma oportunidade de crescimento e eficiência.
-            </p>
-          </div>
-        </div>
       </div>
     </section>
   );

@@ -18,22 +18,10 @@ const Products = () => {
 
   const upcomingBots = [
     {
-      name: "MedBot",
-      description: "Chatbot para agendamento médico e lembretes de consultas",
-      icon: Calendar,
-      status: "Em Desenvolvimento"
-    },
-    {
       name: "EduBot", 
       description: "Assistente educacional para cursos e materiais de estudo",
       icon: FileText,
       status: "Planejamento"
-    },
-    {
-      name: "SalesBot",
-      description: "Automatização de vendas e atendimento ao cliente",
-      icon: MessageCircle,
-      status: "Conceito"
     }
   ];
 
@@ -80,11 +68,18 @@ const Products = () => {
                 </div>
 
                 <div className="flex flex-col sm:flex-row gap-4">
-                  <Button className="bg-primary hover:bg-primary/90 transition-colors">
+                  <Button 
+                    className="bg-primary hover:bg-primary/90 transition-colors"
+                    onClick={() => window.open('https://wa.me/5571829984718471', '_blank')}
+                  >
                     <Smartphone className="w-4 h-4 mr-2" />
                     Experimentar Grátis
                   </Button>
-                  <Button variant="outline" className="hover-lift">
+                  <Button 
+                    variant="outline" 
+                    className="hover-lift"
+                    onClick={() => window.open('https://automatizai-dashboard.lovable.app/dashboard/HgiMhIjFWOJY67Ch2XqLV7SqXpWnAeAv', '_blank')}
+                  >
                     <BarChart3 className="w-4 h-4 mr-2" />
                     Ver Dashboard Demo
                   </Button>
