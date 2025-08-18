@@ -1,7 +1,6 @@
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Code, Lightbulb, Target, Users, Award, Zap } from "lucide-react";
-import danielProfile from "@/assets/daniel-profile.jpg";
 
 const About = () => {
   const stats = [
@@ -41,23 +40,9 @@ const About = () => {
         </div>
 
         {/* Founder Section */}
-        <div className="max-w-6xl mx-auto mb-20">
+        <div className="max-w-4xl mx-auto mb-20">
           <Card className="overflow-hidden hover-lift glass-card">
-            <div className="grid lg:grid-cols-2 gap-0">
-              {/* Photo */}
-              <div className="relative p-8 lg:p-12 bg-gradient-to-br from-primary/5 to-secondary/5">
-                <div className="relative">
-                  <img
-                    src={danielProfile}
-                    alt="Daniel Miranda Nascimento - Fundador da AutomatizaÍ"
-                    className="w-full max-w-sm mx-auto rounded-2xl shadow-xl"
-                  />
-                  <div className="absolute -bottom-4 -right-4 w-20 h-20 bg-primary rounded-full animate-float glow-effect opacity-30" />
-                </div>
-              </div>
-
-              {/* Content */}
-              <CardContent className="p-8 lg:p-12 flex flex-col justify-center">
+            <CardContent className="p-8 lg:p-12">
                 <div className="mb-6">
                   <h3 className="text-2xl md:text-3xl font-bold mb-2">Daniel Miranda Nascimento</h3>
                   <Badge className="bg-primary text-primary-foreground mb-4">Fundador & Desenvolvedor Principal</Badge>
@@ -89,7 +74,6 @@ const About = () => {
                   </div>
                 </div>
               </CardContent>
-            </div>
           </Card>
         </div>
 
