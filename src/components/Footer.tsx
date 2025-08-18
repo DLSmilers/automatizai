@@ -1,4 +1,4 @@
-import { MessageCircle, Code, Heart } from "lucide-react";
+import { MessageCircle, Code } from "lucide-react";
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
@@ -100,13 +100,6 @@ const Footer = () => {
           <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
             <div className="text-sm text-muted-foreground">
               © {currentYear} AutomatizaÍ. Todos os direitos reservados.
-            </div>
-            
-            <div className="flex items-center space-x-2 text-sm text-muted-foreground">
-              <span>Desenvolvido com</span>
-              <Heart className="w-4 h-4 text-primary fill-current" />
-              <span>por</span>
-              <span className="font-medium text-primary">Daniel Miranda Nascimento</span>
             </div>
             
             <div className="flex items-center space-x-2 text-sm text-muted-foreground">
