@@ -16,14 +16,13 @@ const Header = () => {
       <div className="container mx-auto px-4 py-4">
         <div className="flex items-center justify-between">
           {/* Logo */}
-          <div className="flex items-center space-x-2">
-            <div className="w-10 h-10 bg-primary rounded-lg flex items-center justify-center">
-              <MessageCircle className="w-6 h-6 text-white" />
-            </div>
-            <div>
-              <span className="text-xl font-bold text-gradient">AutomatizaÍ</span>
-              <p className="text-xs text-muted-foreground">Chatbots Inteligentes</p>
-            </div>
+          <div className="flex items-center space-x-3">
+            <img 
+              src="/lovable-uploads/8831d64d-2a66-4be4-ada4-82dc5ca8ce68.png" 
+              alt="AutomatizaÍ Logo"
+              className="w-10 h-10 object-contain"
+            />
+            <span className="text-xl font-bold text-gradient">AutomatizaÍ</span>
           </div>
 
           {/* Desktop Navigation */}
@@ -51,12 +50,6 @@ const Header = () => {
               className="text-foreground hover:text-primary transition-colors"
             >
               Sobre
-            </button>
-            <button
-              onClick={() => scrollToSection('contato')}
-              className="text-foreground hover:text-primary transition-colors"
-            >
-              Contato
             </button>
           </nav>
 
@@ -106,12 +99,6 @@ const Header = () => {
                 className="text-left text-foreground hover:text-primary transition-colors"
               >
                 Sobre
-              </button>
-              <button
-                onClick={() => scrollToSection('contato')}
-                className="text-left text-foreground hover:text-primary transition-colors"
-              >
-                Contato
               </button>
               <Button 
                 onClick={() => scrollToSection('produtos')}
