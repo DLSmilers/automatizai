@@ -3,9 +3,10 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
-import { MessageCircle, Mail, Phone, MapPin, Send, Clock } from "lucide-react";
+import { MessageCircle, Mail, Phone, MapPin, Send, Clock, AlertCircle } from "lucide-react";
 import { useState } from "react";
 import { useToast } from "@/hooks/use-toast";
+import { sanitizeInput, validateContactForm, createSafeWhatsAppUrl, createRateLimiter, ValidationError } from "@/utils/security";
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -15,32 +16,113 @@ const Contact = () => {
     subject: '',
     message: ''
   });
+  const [validationErrors, setValidationErrors] = useState<ValidationError[]>([]);
+  const [isSubmitting, setIsSubmitting] = useState(false);
   const { toast } = useToast();
+  
+  // Rate limiter: max 3 attempts per 5 minutes
+  const rateLimiter = createRateLimiter(3, 5 * 60 * 1000);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     
-    // Simular envio do formulário
-    toast({
-      title: "Mensagem enviada com sucesso!",
-      description: "Entraremos em contato em até 24 horas.",
-    });
+    if (isSubmitting) return;
     
-    // Limpar formulário
-    setFormData({
-      name: '',
-      email: '',
-      phone: '',
-      subject: '',
-      message: ''
-    });
+    // Check rate limiting
+    if (!rateLimiter()) {
+      toast({
+        title: "Muitas tentativas",
+        description: "Por favor, aguarde alguns minutos antes de tentar novamente.",
+        variant: "destructive",
+      });
+      return;
+    }
+    
+    setIsSubmitting(true);
+    setValidationErrors([]);
+    
+    try {
+      // Sanitize all inputs
+      const sanitizedData = {
+        name: sanitizeInput(formData.name),
+        email: sanitizeInput(formData.email),
+        phone: sanitizeInput(formData.phone),
+        subject: sanitizeInput(formData.subject),
+        message: sanitizeInput(formData.message)
+      };
+      
+      // Validate form data
+      const errors = validateContactForm(sanitizedData);
+      
+      if (errors.length > 0) {
+        setValidationErrors(errors);
+        toast({
+          title: "Erro de validação",
+          description: "Por favor, corrija os campos destacados.",
+          variant: "destructive",
+        });
+        return;
+      }
+      
+      // Simulate form submission with security measures
+      // In production, this would send to a secure backend
+      await new Promise(resolve => setTimeout(resolve, 1000));
+      
+      toast({
+        title: "Mensagem enviada com sucesso!",
+        description: "Entraremos em contato em até 24 horas.",
+      });
+      
+      // Clear form
+      setFormData({
+        name: '',
+        email: '',
+        phone: '',
+        subject: '',
+        message: ''
+      });
+      setValidationErrors([]);
+      
+    } catch (error) {
+      toast({
+        title: "Erro ao enviar mensagem",
+        description: "Tente novamente em alguns minutos.",
+        variant: "destructive",
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    const { name, value } = e.target;
+    
+    // Clear validation error for this field when user starts typing
+    if (validationErrors.some(error => error.field === name)) {
+      setValidationErrors(prev => prev.filter(error => error.field !== name));
+    }
+    
     setFormData({
       ...formData,
-      [e.target.name]: e.target.value
+      [name]: value
     });
+  };
+  
+  const getFieldError = (fieldName: string) => {
+    return validationErrors.find(error => error.field === fieldName);
+  };
+  
+  const handleSecureWhatsApp = (phone: string, message?: string) => {
+    try {
+      const safeUrl = createSafeWhatsAppUrl(phone, message);
+      window.open(safeUrl, '_blank', 'noopener,noreferrer');
+    } catch (error) {
+      toast({
+        title: "Erro",
+        description: "Número de telefone inválido.",
+        variant: "destructive",
+      });
+    }
   };
 
   const contactInfo = [
@@ -100,9 +182,17 @@ const Contact = () => {
                         value={formData.name}
                         onChange={handleChange}
                         required
-                        className="mt-1"
+                        maxLength={100}
+                        className={`mt-1 ${getFieldError('name') ? 'border-destructive' : ''}`}
                         placeholder="Seu nome"
+                        aria-describedby={getFieldError('name') ? 'name-error' : undefined}
                       />
+                      {getFieldError('name') && (
+                        <p id="name-error" className="text-sm text-destructive mt-1 flex items-center">
+                          <AlertCircle className="w-4 h-4 mr-1" />
+                          {getFieldError('name')?.message}
+                        </p>
+                      )}
                     </div>
                     <div>
                       <Label htmlFor="email">Email *</Label>
@@ -113,9 +203,17 @@ const Contact = () => {
                         value={formData.email}
                         onChange={handleChange}
                         required
-                        className="mt-1"
+                        maxLength={254}
+                        className={`mt-1 ${getFieldError('email') ? 'border-destructive' : ''}`}
                         placeholder="seu@email.com"
+                        aria-describedby={getFieldError('email') ? 'email-error' : undefined}
                       />
+                      {getFieldError('email') && (
+                        <p id="email-error" className="text-sm text-destructive mt-1 flex items-center">
+                          <AlertCircle className="w-4 h-4 mr-1" />
+                          {getFieldError('email')?.message}
+                        </p>
+                      )}
                     </div>
                   </div>
 
@@ -127,9 +225,16 @@ const Contact = () => {
                         name="phone"
                         value={formData.phone}
                         onChange={handleChange}
-                        className="mt-1"
+                        className={`mt-1 ${getFieldError('phone') ? 'border-destructive' : ''}`}
                         placeholder="(11) 99999-9999"
+                        aria-describedby={getFieldError('phone') ? 'phone-error' : undefined}
                       />
+                      {getFieldError('phone') && (
+                        <p id="phone-error" className="text-sm text-destructive mt-1 flex items-center">
+                          <AlertCircle className="w-4 h-4 mr-1" />
+                          {getFieldError('phone')?.message}
+                        </p>
+                      )}
                     </div>
                     <div>
                       <Label htmlFor="subject">Assunto *</Label>
@@ -139,9 +244,17 @@ const Contact = () => {
                         value={formData.subject}
                         onChange={handleChange}
                         required
-                        className="mt-1"
+                        maxLength={200}
+                        className={`mt-1 ${getFieldError('subject') ? 'border-destructive' : ''}`}
                         placeholder="Interesse no Cofrin"
+                        aria-describedby={getFieldError('subject') ? 'subject-error' : undefined}
                       />
+                      {getFieldError('subject') && (
+                        <p id="subject-error" className="text-sm text-destructive mt-1 flex items-center">
+                          <AlertCircle className="w-4 h-4 mr-1" />
+                          {getFieldError('subject')?.message}
+                        </p>
+                      )}
                     </div>
                   </div>
 
@@ -153,14 +266,29 @@ const Contact = () => {
                       value={formData.message}
                       onChange={handleChange}
                       required
-                      className="mt-1 min-h-[120px]"
+                      maxLength={2000}
+                      className={`mt-1 min-h-[120px] ${getFieldError('message') ? 'border-destructive' : ''}`}
                       placeholder="Conte-nos mais sobre seu projeto ou interesse em nossos chatbots..."
+                      aria-describedby={getFieldError('message') ? 'message-error' : undefined}
                     />
+                    {getFieldError('message') && (
+                      <p id="message-error" className="text-sm text-destructive mt-1 flex items-center">
+                        <AlertCircle className="w-4 h-4 mr-1" />
+                        {getFieldError('message')?.message}
+                      </p>
+                    )}
+                    <p className="text-xs text-muted-foreground mt-1">
+                      {formData.message.length}/2000 caracteres
+                    </p>
                   </div>
 
-                  <Button type="submit" className="w-full bg-primary hover:bg-primary/90 transition-colors">
+                  <Button 
+                    type="submit" 
+                    disabled={isSubmitting}
+                    className="w-full bg-primary hover:bg-primary/90 transition-colors disabled:opacity-50"
+                  >
                     <Send className="w-4 h-4 mr-2" />
-                    Enviar Mensagem
+                    {isSubmitting ? 'Enviando...' : 'Enviar Mensagem'}
                   </Button>
                 </form>
               </CardContent>
@@ -185,7 +313,14 @@ const Contact = () => {
                       <Button
                         variant="outline"
                         size="sm"
-                        onClick={() => window.open(contact.link, '_blank')}
+                        onClick={() => {
+                          if (contact.link.startsWith('https://wa.me/')) {
+                            const phone = contact.link.replace('https://wa.me/', '');
+                            handleSecureWhatsApp(phone);
+                          } else {
+                            window.open(contact.link, '_blank', 'noopener,noreferrer');
+                          }
+                        }}
                         className="hover-lift"
                       >
                         {contact.action}
@@ -247,7 +382,7 @@ const Contact = () => {
             <Button 
               size="lg" 
               className="bg-secondary hover:bg-secondary/90 transition-colors"
-              onClick={() => window.open("https://wa.me/5511999999999?text=Olá! Gostaria de saber mais sobre os chatbots da AutomatizaÍ", '_blank')}
+              onClick={() => handleSecureWhatsApp("5511999999999", "Olá! Gostaria de saber mais sobre os chatbots da AutomatizaÍ")}
             >
               <MessageCircle className="w-5 h-5 mr-2" />
               Chamar no WhatsApp
