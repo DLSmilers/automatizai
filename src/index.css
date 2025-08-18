@@ -18,7 +18,7 @@ All colors MUST be HSL.
     --popover: 0 0% 100%;
     --popover-foreground: 225 21% 14%;
 
-    --primary: 214 100% 40%; /* Azul confiança #0066CC */
+    --primary: 142 70% 49%; /* Verde AutomatizaÍ #25D366 */
     --primary-foreground: 0 0% 100%;
 
     --secondary: 169 100% 42%; /* Verde sucesso #00D4AA */
@@ -35,24 +35,24 @@ All colors MUST be HSL.
 
     --border: 218 27% 91%;
     --input: 218 27% 91%;
-    --ring: 214 100% 40%;
+    --ring: 142 70% 49%;
 
     /* Custom Design Tokens - Tech Moderno */
-    --primary-glow: 214 100% 50%;
+    --primary-glow: 142 70% 59%;
     --secondary-glow: 169 100% 52%;
     --accent-glow: 17 100% 70%;
     
     /* Tech Moderno Shadows */
-    --shadow-soft: 0 2px 10px hsla(214 100% 40% / 0.1);
-    --shadow-medium: 0 8px 30px hsla(214 100% 40% / 0.15);
-    --shadow-strong: 0 20px 40px hsla(214 100% 40% / 0.2);
-    --shadow-glow: 0 0 30px hsla(214 100% 40% / 0.3);
+    --shadow-soft: 0 2px 10px hsla(142 70% 49% / 0.1);
+    --shadow-medium: 0 8px 30px hsla(142 70% 49% / 0.15);
+    --shadow-strong: 0 20px 40px hsla(142 70% 49% / 0.2);
+    --shadow-glow: 0 0 30px hsla(142 70% 49% / 0.3);
     --shadow-tech: 0 10px 40px hsla(17 100% 60% / 0.2);
     --shadow-success: 0 10px 40px hsla(169 100% 42% / 0.2);
     
     /* Glass Effects */
     --glass-bg: hsla(0 0% 100% / 0.15);
-    --glass-border: hsla(214 100% 40% / 0.2);
+    --glass-border: hsla(142 70% 49% / 0.2);
     
     /* Animation */
     --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
@@ -92,7 +92,7 @@ All colors MUST be HSL.
     --popover: 225 19% 18%;
     --popover-foreground: 218 32% 98%;
 
-    --primary: 214 100% 50%; /* Azul confiança mais claro no dark */
+    --primary: 142 70% 59%; /* Verde AutomatizaÍ mais claro no dark */
     --primary-foreground: 0 0% 100%;
 
     --secondary: 169 100% 52%; /* Verde sucesso mais claro no dark */
@@ -109,17 +109,17 @@ All colors MUST be HSL.
 
     --border: 225 19% 21%;
     --input: 225 19% 21%;
-    --ring: 214 100% 50%;
+    --ring: 142 70% 59%;
     
     /* Sidebar dark mode */
     --sidebar-background: 225 21% 14%;
     --sidebar-foreground: 218 32% 98%;
-    --sidebar-primary: 214 100% 50%;
+    --sidebar-primary: 142 70% 59%;
     --sidebar-primary-foreground: 0 0% 100%;
     --sidebar-accent: 225 19% 21%;
     --sidebar-accent-foreground: 218 32% 98%;
     --sidebar-border: 225 19% 21%;
-    --sidebar-ring: 214 100% 50%;
+    --sidebar-ring: 142 70% 59%;
   }
 }
 
